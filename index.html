@@ -750,7 +750,7 @@
       },
       {
         key: 'q10',
-        text: '会社の独自の強み（宝）を他者に説明できますか？',
+        text: '会社の独自の強み（宝）を他者へ説明できますか？',
         options: [
           { text: '他社との明確な違いを数値や言葉で説明できる', score: 10, points: { A: 1, B: 1, C: 1, D: 3 } },
           { text: 'なんとなくあるが、言葉で明確に伝えるのは難しい', score: 6, points: { A: 3, B: 2, C: 2, D: 1 } },
@@ -928,8 +928,9 @@
         document.getElementById('loading-card').classList.add('hidden');
         document.getElementById('result-card').classList.remove('hidden');
         
-        document.getElementById('chest-reveal-section').style.display = 'block';
-        document.getElementById('real-result-content').style.display = 'none';
+        // Tailwindのhidden管理へ一貫して変更
+        document.getElementById('chest-reveal-section').classList.remove('hidden');
+        document.getElementById('real-result-content').classList.add('hidden');
 
         // 宝箱をセット
         const revealChest = document.getElementById('result-interactive-chest');
@@ -963,8 +964,9 @@
       document.getElementById('loading-card').classList.add('hidden');
       document.getElementById('result-card').classList.remove('hidden');
 
-      document.getElementById('chest-reveal-section').style.display = 'block';
-      document.getElementById('real-result-content').style.display = 'none';
+      // Tailwindのhidden管理へ一貫して変更
+      document.getElementById('chest-reveal-section').classList.remove('hidden');
+      document.getElementById('real-result-content').classList.add('hidden');
 
       const revealChest = document.getElementById('result-interactive-chest');
       revealChest.classList.add('animate-wiggle');
@@ -975,14 +977,13 @@
       }, 500);
     }
 
-    // 診断ロジックの計算（配列安全対策を完全に実装）
+    // 診断ロジックの計算
     function calculateDiagnostics() {
       let scoreA = 0, scoreB = 0, scoreC = 0, scoreD = 0;
       let rawScore = 0; 
       let totalWeight = 0;
 
       questions.forEach((q) => {
-        // 未回答の場合は0番目を安全に代入
         const selectedIdx = (typeof answers[q.key] !== 'undefined') ? answers[q.key] : 0;
         const option = q.options[selectedIdx] || q.options[0];
         
@@ -1010,16 +1011,13 @@
       if (scoreC > maxScore) { winnerType = 'C'; maxScore = scoreC; }
       if (scoreD > maxScore) { winnerType = 'D'; maxScore = scoreD; }
 
-      // Q1(業種) 抽出 (安全なフォールバックを徹底)
       const q1Selected = (typeof answers['q1'] !== 'undefined' && questions[0].options[answers['q1']]) ? answers['q1'] : 0;
       const industryName = questions[0].options[q1Selected]?.industry || '一般事業';
       const industryDetail = treasureInventory[industryName] || treasureInventory['一般事業'];
 
-      // Q2(規模)
       const q2Selected = (typeof answers['q2'] !== 'undefined' && questions[1].options[answers['q2']]) ? answers['q2'] : 0;
       const sizeName = questions[1].options[q2Selected]?.size || '1人';
 
-      // 伸びしろポイントの自動マッピング (Q4〜Q8の回答状況から動的に抽出)
       const potentials = [];
       if (answers['q4'] >= 1) potentials.push(potentialInventory['q4-no']);
       if (answers['q5'] >= 2) potentials.push(potentialInventory['q5-no']);
@@ -1068,6 +1066,7 @@
 
       // 3. 1.2秒後、自動的に結果画面レポートをフェードイン表示
       setTimeout(() => {
+        // インラインスタイルを排除し、Tailwindクラスの着脱に統一
         revealSection.classList.add('hidden');
         const resultContent = document.getElementById('real-result-content');
         resultContent.classList.remove('hidden');
