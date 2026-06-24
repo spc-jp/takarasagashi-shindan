@@ -194,7 +194,7 @@
         まだ見つかっていない宝があります。
       </p>
 
-      <!-- メインイラスト (宝箱) -->
+      <!-- メメインイラスト (宝箱) -->
       <div class="w-48 h-48 mx-auto mb-8 relative flex items-center justify-center">
         <div class="absolute inset-0 bg-gold-grad opacity-10 rounded-full blur-xl animate-pulse"></div>
         <svg id="intro-chest" class="w-40 h-40 text-primary drop-shadow-lg cursor-pointer animate-wiggle" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="wiggleChest()">
@@ -224,7 +224,7 @@
           </li>
           <li class="flex items-start">
             <span class="text-accent mr-2">✦</span>
-            <span>明日から実践できる、あなた専用の「3ヶ月改善ロードマップ」</span>
+            <span>明日から実践できる、あなた専用 of 「3ヶ月改善ロードマップ」</span>
           </li>
         </ul>
       </div>
@@ -415,14 +415,14 @@
         </div>
 
         <!-- ================= LINE公式アカウント誘導 ================= -->
-        <div class="no-print bg-gradient-to-r from-[#11c15b]/10 to-[#06c755]/5 border-2 border-[#06c755] rounded-2xl p-6 md:p-8 mb-8 text-center relative overflow-hidden">
-          <div class="absolute -top-10 -right-10 w-32 h-32 bg-[#06c755]/10 rounded-full blur-xl"></div>
-          <span class="bg-[#06c755] text-white font-black text-xs px-3 py-1.2 rounded-full uppercase tracking-wider">期間限定プレゼント</span>
+        <div class="no-print bg-gradient-to-r from-emerald-100/30 to-emerald-50 border-2 border-emerald-500 rounded-2xl p-6 md:p-8 mb-8 text-center relative overflow-hidden">
+          <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-xl"></div>
+          <span class="bg-emerald-500 text-white font-black text-xs px-3 py-1 rounded-full uppercase tracking-wider">期間限定プレゼント</span>
           <h4 class="text-2xl md:text-3xl font-black text-text-dark mt-3 mb-2">あなた専用「会社の宝活用レポート」を無料進呈！</h4>
           <p class="text-text-sub font-bold text-sm md:text-base max-w-xl mx-auto mb-6">
             診断結果に基づき、あなたの業種や現状に合わせた具体的なAI・SNS・LINE活用策をまとめたフルカラーPDFレポート（全20P相当）を、公式LINEでお届けします。
           </p>
-          <a href="#" onclick="triggerLineLink(event)" class="inline-flex items-center space-x-3 px-8 py-4.5 bg-[#06c755] text-white font-black text-lg md:text-xl rounded-full shadow-lg hover:bg-[#05b04b] transition-all transform hover:-translate-y-1">
+          <a href="#" onclick="triggerLineLink(event)" class="inline-flex items-center space-x-3 px-8 py-4.5 bg-emerald-500 text-white font-black text-lg md:text-xl rounded-full shadow-lg hover:bg-emerald-600 transition-all transform hover:-translate-y-1">
             <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.564.39.084.922.258 1.057.592.12.303.079.778.039 1.083-.162 1.258-.528 4.935-.604 5.65-.083.791.385.72 1.135.253.797-.496 8.591-5.632 11.724-8.874 2.456-2.528 3.568-4.996 3.568-7.568zm-15.655 4.542h-2.18c-.461 0-.834-.374-.834-.834V7.525c0-.46.373-.834.834-.834s.834.374.834.834v5.653h1.346c.461 0 .834.374.834.834s-.373.834-.834.834zm3.033-.834c0 .46-.373.834-.834.834s-.834-.374-.834-.834V7.525c0-.46.373-.834.834-.834s.834.374.834.834v6.487zm6.059.834h-2.735c-.461 0-.834-.374-.834-.834V7.525c0-.46.373-.834.834-.834h2.735c.46 0 .834.374.834.834s-.374.834-.834.834h-1.901v1.657h1.655c.46 0 .834.374.834.834s-.374.834-.834.834h-1.655v1.653h1.901c.46 0 .834.374.834.834s-.374.834-.834.834zm-3.644-4.887l-.01-.019c-.066-.118-.16-.217-.272-.284V7.525c0-.46-.373-.834-.834-.834s-.834.374-.834.834v6.487c0 .46.373.834.834.834s.834-.374.834-.834V9.825l.89 1.341c.148.225.4.357.669.357.461 0 .834-.374.834-.834 0-.174-.055-.341-.157-.48l-1.132-1.708z"/></svg>
             <span>LINE追加で「レポート」を無料で受け取る</span>
           </a>
@@ -437,7 +437,8 @@
             「診断結果はわかったけれど、自社の現状に合わせてどう進めればいい？」そのような方のために、国家資格保有者や専門コンサルタントによる無料オンライン個別相談会を実施しています。
           </p>
           <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-            <button onclick="openModal('consultation-modal')" class="w-full sm:w-auto px-10 py-5 bg-gold-grad text-text-dark font-extrabold text-xl rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <!-- 外部お問合せへの自動バトンタッチモーダルを開く -->
+            <button onclick="prepareConsultationAndOpenModal()" class="w-full sm:w-auto px-10 py-5 bg-gold-grad text-text-dark font-extrabold text-xl rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
               まずは無料相談を予約する
             </button>
             <span class="text-sky-100 font-bold text-sm">（オンライン対応・毎月先着10社様限定）</span>
@@ -485,7 +486,7 @@
         外部アプリケーションを開き、公式LINE「会社の宝探し診断サポート」のアカウント登録を行います。登録後に「レポート」とお送りください。
       </p>
       <div class="flex flex-col space-y-2">
-        <button onclick="closeModal('line-alert-modal')" class="px-6 py-3.5 bg-[#06c755] text-white font-extrabold rounded-full hover:bg-[#05b04b] transition-all">
+        <button onclick="redirectToLine()" class="px-6 py-3.5 bg-[#06c755] hover:bg-[#05b04b] text-white font-extrabold rounded-full transition-all">
           友だち追加へ進む
         </button>
         <button onclick="closeModal('line-alert-modal')" class="px-6 py-3 bg-slate-100 text-slate-600 font-bold rounded-full hover:bg-slate-200 transition-all">
@@ -548,65 +549,49 @@
     </div>
   </div>
 
-  <!-- 無料個別相談予約モーダル -->
+  <!-- 【アップデート】公式HPお問合せバトンタッチモーダル -->
   <div id="consultation-modal" class="no-print hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-sky-100 transform transition-all">
-      <div class="flex justify-between items-center mb-6">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 md:p-8 shadow-2xl border border-sky-100 transform transition-all text-center">
+      <div class="flex justify-between items-center mb-4 text-left">
         <h3 class="text-xl font-black text-text-dark flex items-center">
-          <svg class="w-6 h-6 text-primary mr-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-          無料オンライン個別相談のご予約
+          <svg class="w-6 h-6 text-primary mr-2" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+          診断結果をコピーしました！
         </h3>
         <button onclick="closeModal('consultation-modal')" class="text-slate-400 hover:text-slate-600">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
-      
-      <div id="consult-form-step">
-        <form onsubmit="handleConsultSubmit(event)" class="space-y-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-bold text-text-dark mb-1">お名前</label>
-              <input type="text" required placeholder="例：山田 太郎" class="w-full px-4 py-3 rounded-xl border border-sky-200 focus:outline-none focus:border-primary text-sm font-medium">
-            </div>
-            <div>
-              <label class="block text-sm font-bold text-text-dark mb-1">会社名 / 屋号</label>
-              <input type="text" required placeholder="例：山田株式会社" class="w-full px-4 py-3 rounded-xl border border-sky-200 focus:outline-none focus:border-primary text-sm font-medium">
-            </div>
-          </div>
-          <div>
-            <label class="block text-sm font-bold text-text-dark mb-1">メールアドレス</label>
-            <input type="email" required placeholder="例：yamada@example.com" class="w-full px-4 py-3 rounded-xl border border-sky-200 focus:outline-none focus:border-primary text-sm font-medium">
-          </div>
-          <div>
-            <label class="block text-sm font-bold text-text-dark mb-1">ご希望日時（複数候補をご入力ください）</label>
-            <textarea required rows="2" placeholder="例：1. 7月1日 10:00〜12:00&#10;2. 7月3日 14:00〜16:00" class="w-full px-4 py-3 rounded-xl border border-sky-200 focus:outline-none focus:border-primary text-sm font-medium"></textarea>
-          </div>
-          <div>
-            <label class="block text-sm font-bold text-text-dark mb-1">特に相談したいこと</label>
-            <select class="w-full px-4 py-3 rounded-xl border border-sky-200 focus:outline-none focus:border-primary text-sm font-medium">
-              <option>ホームページの新規作成・改善</option>
-              <option>SNSやLINEを使った集客自動化</option>
-              <option>ChatGPTなどのAI活用による業務効率化</option>
-              <option>自社のコア強みの再定義・ブランディング</option>
-              <option>その他・全体的な経営相談</option>
-            </select>
-          </div>
-          <button type="submit" class="w-full py-4 bg-gold-grad text-text-dark font-extrabold rounded-full shadow-lg hover:opacity-90 transition-all text-lg">
-            無料相談の調整リクエストを送る
-          </button>
-        </form>
+
+      <div class="w-16 h-16 bg-sky-100 text-primary rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+        <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
       </div>
 
-      <div id="consult-success-step" class="hidden text-center py-6">
-        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
-        </div>
-        <h4 class="text-xl font-black text-text-dark mb-2">面談リクエストを受け付けました！</h4>
-        <p class="text-text-sub font-semibold text-sm mb-6 leading-relaxed">
-          日程調整のご案内をメールにて送信いたしました。2営業日以内に事務局担当者（または専門コンサルタント）より正式な日程とZoomのアクセスリンクをご案内いたします。
-        </p>
-        <button onclick="closeModal('consultation-modal')" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-full transition-all">
-          閉じる
+      <p class="text-text-dark font-extrabold text-base md:text-lg mb-3 leading-relaxed">
+        自社に眠る「宝」と「伸びしろ」の情報を<br class="hidden md:inline">クリップボードに自動保存しました。
+      </p>
+
+      <div class="bg-sky-50 rounded-2xl p-4 mb-6 text-left border border-sky-100">
+        <h4 class="font-bold text-sm text-text-dark mb-1 flex items-center">
+          💡 スマイルプラス公式HPお問合せ手順
+        </h4>
+        <ol class="text-xs md:text-sm text-text-sub font-semibold space-y-1 list-decimal list-inside leading-relaxed">
+          <li>「お問合せページへ進む」ボタンをクリック</li>
+          <li>公式HPのお問合せフォームが開きます</li>
+          <li>お問合せ内容（本文）のところで <span class="text-red-600 font-extrabold">【右クリックして貼り付け（ペースト）】</span></li>
+        </ol>
+      </div>
+
+      <!-- クリップボード貼り付け用イメージプレビュー（非表示テキスト） -->
+      <div class="hidden text-left bg-slate-50 text-xs p-3 rounded-lg border border-slate-200 text-slate-500 max-h-24 overflow-y-auto mb-6" id="clipboard-preview-area">
+        <!-- JSで挿入 -->
+      </div>
+
+      <div class="flex flex-col space-y-2">
+        <button onclick="goToSmilePlusContact()" class="w-full py-4.5 bg-gold-grad text-text-dark font-extrabold text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 border-2 border-white">
+          お問合せページへ進む（公式HPへ）
+        </button>
+        <button onclick="closeModal('consultation-modal')" class="px-6 py-2.5 text-slate-500 font-bold hover:text-slate-800 text-sm">
+          キャンセル
         </button>
       </div>
     </div>
@@ -775,7 +760,7 @@
       },
       B: {
         title: "集客成長型",
-        desc: "業界屈指の「確かな技術」や「魅力的な商品力」をすでにお持ちですが、まだ世の中に届ききっていない「情報発信の伸びしろ」が最大の原石です。自社の魅力を見やすくWEB上に整えるだけで、今すぐ集客の成果を生み出す可能性を秘めています。",
+        desc: "業界屈指の「確かな技術」や「魅力的な商品力」をすでにお持ちですが、まだ世の中に届ききっていない「情報発信の伸びしろ」が最大の原石です。自社の魅力を見やすくWEB上に整えるだけで、今すぐ集客 of 成果を生み出す可能性を秘めています。",
         roadmap: [
           { month: "1ヶ月目", title: "ホームページの魅力明確化", detail: "自社のサービスが『誰の、どんな悩みを解決できるのか』を大きな文字で一瞬でわかるよう、スマホ表示を第一優先に整えます。" },
           { month: "2ヶ月目", title: "成果に直結するSNS運用の開始", detail: "毎日更新を義務にせず、最もターゲット顧客がいるプラットフォーム（InstagramやGoogleビジネスプロフィールなど）に絞り週2回の良質発信を始めます。" },
@@ -796,7 +781,7 @@
         desc: "デジタルツールの活用が一定以上進んでおり、常に新しいトレンドに意欲的な、先進性の高い組織体をお持ちです。これからは、個別のツール活用にとどまらず「AI戦略」や「マーケティングオートメーション（自動集客導線）」を極めることで、自動的に成果が伸びる仕組みを構築できます。",
         roadmap: [
           { month: "1ヶ月目", title: "全体導線の統合（一貫性の構築）", detail: "SNS・HP・LINEが分断されていないか見直し、すべての流入からLINE登録、自動教育（ステップ配信）、成約への自動ルートを再設計します。" },
-          { month: "2ヶ月目", title: "最新AIによる戦略ディスカッション", detail: "ChatGPTに自社の財務状況やビジネスモデルを読み込ませ、新規事業の市場分析や営業シナリオを自動創出します。" },
+          { month: "2ヶ月目", title: "最新AIによる戦略ディスカッション", detail: "ChatGPTに自社の財務状況やビジネスモデルを読み込ませ、新規事業の市場分析や営業営業シナリオを自動創出します。" },
           { month: "3ヶ月目", title: "データ分析に基づいた自動化改善", detail: "どの発信や広告が一番集客効率が高かったかを数値で振り返り、自動配信メッセージの文言をA/Bテストして成約率を最大化します。" }
         ]
       }
@@ -808,7 +793,7 @@
       '飲食業': { text: '固定ファン（リピーター）と愛される商品・味', detail: '「ここにしかない」「一度食べたら思い出される」独自のレシピと、顧客がくつろげるアットホームな場づくり。' },
       '美容業': { text: '顧客一人ひとりに寄り添う高い接客力・パーソナル提案', detail: '悩みを聞き出し、なりたい自分を実現するための傾聴力と、生活に密着した高度なリピート構造。' },
       '建設業': { text: '地元のつながりと信頼、確かな施工品質', detail: '地域の課題に即座に対応できる小回り力と、施工完了後も顧客と顔を合わせられるローカルな信頼の絆。' },
-      '一般事業': { text: '小回りの利く誠実なカスタマーサポート力', detail: '大手では実現し得ない、お客様一人の「困った」に迅速に手を差し伸べる誠実なサービス精神。' }
+      '一般事業': { text: '小回りの利く誠実なカスタマーサポート力', detail: '大手では実現し得ない、お客様一人の「困った」に迅速に手を差し延べる誠実なサービス精神。' }
     };
 
     const potentialInventory = {
@@ -898,6 +883,7 @@
       }, 300);
     }
 
+    // 前の質問に戻る
     function prevQuestion() {
       if (currentQuestionIdx > 0) {
         currentQuestionIdx--;
@@ -950,7 +936,6 @@
 
     // [テスト用] スキップ機能
     function skipToResult() {
-      // 安全に初期値を埋める
       answers['q1'] = 0; // 士業
       answers['q2'] = 1; // 2〜5人
       answers['q3'] = 1; // 売上
@@ -967,14 +952,12 @@
       document.getElementById('loading-card').classList.add('hidden');
       document.getElementById('result-card').classList.remove('hidden');
 
-      // Tailwindのhidden管理へ一貫して変更
       document.getElementById('chest-reveal-section').classList.remove('hidden');
       document.getElementById('real-result-content').classList.add('hidden');
 
       const revealChest = document.getElementById('result-interactive-chest');
       revealChest.classList.add('animate-wiggle');
 
-      // スキップ時も自動的に展開演出を開始
       setTimeout(() => {
         revealDiagnosticsResult();
       }, 500);
@@ -1046,7 +1029,7 @@
       };
     }
 
-    // 宝箱タップ / 自動オープン
+    // 宝箱オープン
     function revealDiagnosticsResult() {
       if (isRevealed) return;
       isRevealed = true;
@@ -1058,24 +1041,19 @@
       const particles = document.getElementById('chest-particles');
       const goldShine = document.getElementById('gold-shine');
 
-      // 1. 宝箱アニメーション：フタを開く
       interactiveChest.classList.remove('animate-wiggle');
       interactiveLid.classList.add('chest-lid-open');
       particles.classList.remove('hidden');
       goldShine.classList.remove('hidden');
 
-      // 2. 紙吹雪演出
       createConfetti();
 
-      // 3. 1.2秒後、自動的に結果画面レポートをフェードイン表示
       setTimeout(() => {
-        // インラインスタイルを排除し、Tailwindクラスの着脱に統一
         revealSection.classList.add('hidden');
         const resultContent = document.getElementById('real-result-content');
         resultContent.classList.remove('hidden');
         resultContent.classList.add('animate-fade-in');
 
-        // 各データをDOMへ注入
         const typeData = resultTypes[data.type] || resultTypes['A'];
         document.getElementById('res-industry').innerText = data.industry;
         document.getElementById('res-employees').innerText = data.size;
@@ -1087,13 +1065,11 @@
         document.getElementById('current-date').innerText = `${today.getFullYear()}/${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}`;
         document.getElementById('report-id').innerText = `TR-${Math.floor(1000000 + Math.random() * 9000000)}`;
 
-        // 円形進行度の描画
         const ring = document.getElementById('score-ring');
         const maxOffset = 251.2;
         const offsetValue = maxOffset - (maxOffset * data.score) / 100;
         ring.style.strokeDashoffset = offsetValue;
 
-        // 見つかった宝のレンダリング
         const treasuresContainer = document.getElementById('res-treasures-container');
         treasuresContainer.innerHTML = '';
         data.treasures.forEach(tr => {
@@ -1109,7 +1085,6 @@
           treasuresContainer.appendChild(card);
         });
 
-        // 伸びしろのレンダリング
         const potentialsContainer = document.getElementById('res-potentials-container');
         potentialsContainer.innerHTML = '';
         data.potentials.forEach((pot, i) => {
@@ -1125,7 +1100,6 @@
           potentialsContainer.appendChild(card);
         });
 
-        // ロードマップのレンダリング
         const roadmapContainer = document.getElementById('res-roadmap-steps');
         roadmapContainer.innerHTML = '';
         typeData.roadmap.forEach((step, i) => {
@@ -1144,6 +1118,59 @@
         });
 
       }, 1200);
+    }
+
+    // 【アップデート】無料相談予約のプロセス（診断結果の自動収集・コピー・ポップアップ展開）
+    function prepareConsultationAndOpenModal() {
+      const data = calculateDiagnostics();
+      const typeData = resultTypes[data.type] || resultTypes['A'];
+      
+      // コピペ用テキストを美しく整形
+      let text = `【会社の宝探し診断 結果サマリー】\n`;
+      text += `診断実施日: ${document.getElementById('current-date').innerText}\n`;
+      text += `管理ID: ${document.getElementById('report-id').innerText}\n`;
+      text += `業種: ${data.industry} / 規模: ${data.size}\n`;
+      text += `宝活用スコア: ${data.score} / 100 点\n`;
+      text += `結果タイプ: 【${typeData.title}】\n\n`;
+      
+      text += `■見つかった自社の宝:\n`;
+      data.treasures.forEach((tr, i) => {
+        text += `  ${i+1}. ${tr.text}\n`;
+      });
+      
+      text += `\n■眠っている伸びしろ（宝の原石）:\n`;
+      data.potentials.forEach((pot, i) => {
+        text += `  ${i+1}. ${pot.title}\n`;
+      });
+
+      text += `\n上記診断結果をもとに、具体的な売上アップ・集客・業務改善に向けた無料個別相談を希望します。`;
+
+      // モーダル内の確認プレビュー領域にテキストをセット
+      document.getElementById('clipboard-preview-area').innerText = text;
+
+      // クリップボードへコピーを実行（iFrame環境でのセーフフォールバックを含む）
+      const dummyInput = document.createElement('textarea');
+      dummyInput.value = text;
+      document.body.appendChild(dummyInput);
+      dummyInput.select();
+      dummyInput.setSelectionRange(0, 99999);
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('自動コピーに失敗しました', err);
+      }
+      document.body.removeChild(dummyInput);
+
+      // モーダルオープン
+      openModal('consultation-modal');
+      trackGAEvent('Lead', 'OpenConsultationGate');
+    }
+
+    // スマイルプラスお問合せフォームへジャンプ
+    function goToSmilePlusContact() {
+      window.open('https://www.smileplusctg.com/#contact', '_blank');
+      closeModal('consultation-modal');
+      trackGAEvent('Lead', 'GoToSmilePlusContact');
     }
 
     // 紙吹雪を動的生成
@@ -1174,10 +1201,12 @@
         document.getElementById('email-form-step').classList.remove('hidden');
         document.getElementById('email-success-step').classList.add('hidden');
       }
-      if (modalId === 'consultation-modal') {
-        document.getElementById('consult-form-step').classList.remove('hidden');
-        document.getElementById('consult-success-step').classList.add('hidden');
-      }
+    }
+
+    // LINEリダイレクト
+    function redirectToLine() {
+      window.open('https://lin.ee/PCRwEA0', '_blank');
+      closeModal('line-alert-modal');
     }
 
     // メール送信
@@ -1186,14 +1215,6 @@
       document.getElementById('email-form-step').classList.add('hidden');
       document.getElementById('email-success-step').classList.remove('hidden');
       trackGAEvent('Lead', 'EmailSubmit');
-    }
-
-    // 無料相談
-    function handleConsultSubmit(e) {
-      e.preventDefault();
-      document.getElementById('consult-form-step').classList.add('hidden');
-      document.getElementById('consult-success-step').classList.remove('hidden');
-      trackGAEvent('Lead', 'ConsultationSubmit');
     }
 
     // LINEリンク
